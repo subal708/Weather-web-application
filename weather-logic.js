@@ -137,7 +137,7 @@ document.getElementById("cityInput").addEventListener("keyup", function (event) 
 // Function to fetch weather from OpenWeatherMap API
 async function getWeather() {
     const city = document.getElementById("cityInput").value;
-    const apiKey = "2695e2329926772d89057c9808a3bcb9"; // Replace with your OpenWeatherMap API key
+    const apiKey = "2695e2329926772d89057c9808a3bcb9"; // API key
 
     if (city === "") {
         alert("Please enter a city name!");
@@ -173,12 +173,12 @@ async function getWeather() {
         countryCode.innerText = `${data.sys.country}`;
         // countryCode.innerText = `${data.sys.country}`;
 
-        // document.getElementById("weatherIcon").src =
-        //     `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        document.getElementById("weatherIcon").src =`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
-        const iconFile = AnimatedweatherIcons[data.weather[0].id] || "clear-day.svg";
-
-        document.getElementById("weatherIcon").src =`https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/${iconFile}`;
+        //anumated icon id update
+        // const iconFile = AnimatedweatherIcons[data.weather[0].id] || "clear-day.svg";
+        // animated icon update
+        // document.getElementById("weatherIcon").src =`https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/${iconFile}`;
 
         description.innerText = ` ${data.weather[0].description}`;
         humidity.innerText = `${data.main.humidity}%`;
